@@ -1,0 +1,13 @@
+actor Counter {
+
+  stable var value = 0;
+
+  public func dec() : async Nat {
+    if (value >= 3) {
+      value -= 3;
+    } else {
+      value = 0; // Ensure value does not go below 0
+    }
+    return value;
+  };
+}
